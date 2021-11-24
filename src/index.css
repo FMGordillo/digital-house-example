@@ -24,6 +24,12 @@ code {
   background-color: hsl(0deg, 0%, 70%);
 }
 
+blockquote {
+  margin: 1em 0;
+  padding: 1em 40px;
+  border-left: 2px solid black;
+}
+
 a {
   color: hsl(240deg, 70%, 50%);
   text-decoration: none;

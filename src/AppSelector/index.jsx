@@ -21,9 +21,7 @@ function AppSelector() {
           </Link>
         </li>
         <li>
-          <Link to="problem-02">
-            Problem 02: Re-executing (in consequence, re-rendering) a value
-          </Link>
+          <Link to="problem-02">Problem 02: Function needs optimization</Link>
         </li>
         <li>
           <Link to="solution-02">

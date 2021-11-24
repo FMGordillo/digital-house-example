@@ -10,7 +10,7 @@ function AppProblem() {
   const [input, setInput] = useState("");
   return (
     <>
-      <h1>Our problem</h1>
+      <h1>Problem 01: Unnecesary re-rendering</h1>
       <Counter />
       <input value={input} onChange={(e) => setInput(e.target.value)} />
     </>

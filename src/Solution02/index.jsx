@@ -1,27 +1,46 @@
-import { useMemo, useRef, useState } from "react";
+import { useMemo, useState } from "react";
 
-function Counter() {
-  const ref = useRef(0);
+function Solution02() {
+  const [text, setText] = useState("");
+  const [count, setCount] = useState(0);
 
-  return <p>I've just rendered {ref.current++} times</p>;
-}
+  const increment = () => setCount(count + 1);
+  const decrement = () => setCount(count - 1);
 
-function App02() {
-  const [input, setInput] = useState("");
-  const [reRender, sendReRender] = useState(false);
+  const reverseText = (/** @type {string} */ text) => {
+    let i = 0;
+    while (i < 1000000000) i++;
+    return text.split("").reverse().join("");
+  };
 
-  const CounterMemo = useMemo(() => Counter, [reRender]);
+  const reversedText = useMemo(() => reverseText(text), [text]);
 
   return (
     <>
       <h1>
         Solution 02: Using <code>useMemo()</code>
       </h1>
-      <CounterMemo />
-      <button onClick={() => sendReRender(!reRender)}>Force re-render</button>
-      <input value={input} onChange={(e) => setInput(e.target.value)} />
+      <blockquote>
+        Play around with the counter and the input. Note that they render
+        differently than the Problem 02.
+        <br />
+        Please, be patient. Just one click at a time.
+      </blockquote>
+      <div>
+        <button onClick={() => increment()}>+</button>
+        <span> {count} </span>
+        <button onClick={() => decrement()}>-</button>
+      </div>
+      <p>
+        {text} is {reversedText} backwards
+      </p>
+      <input
+        type="text"
+        name="password"
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+      />
     </>
   );
 }
-
-export default App02;
+export default Solution02;

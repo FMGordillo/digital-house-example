@@ -27,7 +27,7 @@ const Container = styled.div`
 `;
 
 const Link = styled(BaseLink)`
-  font-weight: ${({ isActive }) => (isActive ? "bold" : "normal")};
+  font-weight: ${(props) => (props["data-activelink"] ? "bold" : "normal")};
 `;
 
 function Layout() {
@@ -38,7 +38,7 @@ function Layout() {
   };
 
   const createLink = (route, text) => (
-    <Link isActive={isRouteActive(route)} to={route}>
+    <Link data-activelink={isRouteActive(route)} to={route}>
       {text}
     </Link>
   );
